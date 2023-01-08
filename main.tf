@@ -15,14 +15,8 @@ provider "aws" {
 resource "aws_instance" "app_server" {
   ami           = "ami-0530ca8899fac469f"
   instance_type = "t1.micro"
-  key_name = "iac-rafael-mac" #create the key name in aws
-  /* user_data = <<-EOF
-              #!/bin/bash
-              cd /home/ubuntu
-              echo "<h1>Hello, World</h1>" > index.html
-              nohup busybox httpd -f -p 8080 &
-              EOF */
+  key_name = "iac-rafael-mac" #create the key in aws
   tags = {
-    Name = "Primeira Instância"
+    Name = "Terraform, Ansible and Python"
   }
 }
