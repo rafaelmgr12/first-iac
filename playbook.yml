@@ -13,3 +13,11 @@
         name:
           - django
           - djangorestframework
+    - name: Init project
+      ansible.builtin.shell: ". /home/ubuntu/python-example/venv/bin/activate; django-admin startproject setup /home/ubuntu/python-example"
+    - name: Change hosts 
+      lineinfile:
+        path: /home/ubuntu/python-example/setup/settings.py
+        regexp: 'ALLOWED_HOSTS'
+        line: 'ALLOWED_HOSTS= ["*"]'
+        backrefs: yes
