@@ -15,6 +15,7 @@ provider "aws" {
 resource "aws_instance" "app_server" {
   ami           = "ami-0530ca8899fac469f"
   instance_type = "t1.micro"
+  key_name = "iac-rafael-mac" #create the key name in aws
 
   tags = {
     Name = "Primeira Instância"
